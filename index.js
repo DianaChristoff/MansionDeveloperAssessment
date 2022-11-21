@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 
 bodyParser = require("body-parser");
 
-const userController = require("./controllers/userController")
+const userController = require('../controllers/userController')
 
 dotenv.config();
 
