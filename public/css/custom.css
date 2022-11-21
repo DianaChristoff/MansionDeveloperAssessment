@@ -138,3 +138,24 @@ body{
   margin-bottom: 60px !important;
   font-family: 'Rowdies', cursive !important;
 }
+
+.custom-submit-btn{
+  font-weight: bold;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.admin-panel-sidebar-toggle{
+ height: 3vh !important;
+ width: 3vh !important;
+ display: flex !important;
+ justify-content: flex-start !important;
+ background: transparent !important;
+ align-items: center !important;             
+}
+
+.navbar > div .container-fluid{
+  height: 3vh !important; 
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: stretch !important;
+}

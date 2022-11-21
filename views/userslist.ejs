@@ -2,14 +2,12 @@
 
 <head>
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/custom.css" />
 
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
-
-    <link rel="stylesheet" href="/assets/css/custom.css" />
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,19 +20,17 @@
 </head>
 
 <body style="display: block; background: rgb(231, 138, 72);">
-    <div class="mb-5" style="width:100%">
+    <div class="background-overlay">
         <nav class="navbar fixed-top bg-light" style="background-color: #f1e5daa3 !important;">
-            <div class="container-fluid" style=" height: 3vh;">
-                <button class="rounded-circle border-0 px-3 py-2" id="sidebarToggle"><i class="fa fa-navicon"></i></button>
+            <div class="container-fluid">
+                <button class="border-0 admin-panel-sidebar-toggle" id="sidebarToggle">
+                    <i class="fa fa-navicon" style="background-size: contain;"></i>
+                </button>
                 <img src="/assets/img/casinocom-logo.png" style="height: 100%;"></img>
-                <span class="navbar-text">Admin Panel</span>
+                <span class="navbar-text" style="padding: 0;align-self: center;">Admin Panel</span>
             </div>
         </nav>
-
-    </div>
-    <div class="background-overlay">
-
-        <div class="container">
+        <div class="container-fluid" style="height: 85vh;">
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
@@ -44,13 +40,13 @@
                                 <table class="table no-wrap user-table mb-0">
                                     <thead>
                                         <tr>
-                                            <th scope="col" class="border-0 text-uppercase font-medium pl-4">#</th>
-                                            <th scope="col" class="border-0 text-uppercase font-medium">Name</th>
-                                            <th scope="col" class="border-0 text-uppercase font-medium">Username</th>
-                                            <th scope="col" class="border-0 text-uppercase font-medium">Email</th>
-                                            <th scope="col" class="border-0 text-uppercase font-medium">Registered</th>
-                                            <th scope="col" class="border-0 text-uppercase font-medium">Paid</th>
-                                            <th scope="col" class="border-0 text-uppercase font-medium">Manage</th>
+                                            <th scope="col" class="text-uppercase font-medium pl-4">#</th>
+                                            <th scope="col" class="text-uppercase font-medium">Name</th>
+                                            <th scope="col" class="text-uppercase font-medium">Username</th>
+                                            <th scope="col" class="text-uppercase font-medium">Email</th>
+                                            <th scope="col" class="text-uppercase font-medium">Registered</th>
+                                            <th scope="col" class="text-uppercase font-medium">Paid</th>
+                                            <th scope="col" class="text-uppercase font-medium">Manage</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -77,14 +73,16 @@
                                                     </td>
                                                     <td>
                                                         <span class="text-muted">
-                                                            <%=users[i].date.getDate()%>/<%=users[i].date.getMonth()+1%>/
+                                                            <%=users[i].date.getDate()%>/<%=users[i].date.getMonth()+1%>
+                                                                    /
                                                                     <%=users[i].date.getFullYear()%>
                                                         </span><br>
                                                     </td>
                                                     <td>
                                                         <span class="text-muted">
                                                             <%if (users[i].add_info){%> <i class="fa fa-check"></i>
-                                                            <%}else{%><i class="fa fa-close"></i><%}%>
+                                                                <%}else{%><i class="fa fa-close"></i>
+                                                                    <%}%>
                                                         </span><br>
                                                     </td>
                                                     <td>
@@ -99,13 +97,11 @@
                                                             disabled><i class="fa fa-user-times"></i> </button>
                                                     </td>
                                                 </tr>
-
                                                 <% }} else{ %>
-    
                                                     <div style="text-align: center;margin: 7vh;font-size: 1.35rem">
                                                         <strong> There are no registered users yet. </strong> <br />
                                                     </div>
-                                                 <%} %>
+                                                    <%} %>
                                     </tbody>
                                 </table>
                             </div>
@@ -116,7 +112,5 @@
         </div>
     </div>
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
 </body>
