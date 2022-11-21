@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <title>Registration - Casino.com</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+
+    <link rel="stylesheet" href="/assets/css/custom.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies&display=swap" rel="stylesheet">
+
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="background-overlay">
+        <nav class="navbar fixed-top bg-light">
+            <div class="container-fluid" style="justify-content: center; height: 3vh;">
+                <img src="/assets/img/casinocom-logo.png" style="height: 100%;"></img>
+            </div>
+        </nav>
+        <div id="register_form" class="card p-4 fade show">
+            <div class="card-body">
+                <header class="card-title">Registration</header>
+                <form>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" placeholder="Leave a comment here" id="username" name="username">
+                        <label for="username"> Username*</label>
+                        <div id="usernameHelpBlock" class="form-text" style="text-align: left;font-size:12px;">
+                            Your username must be 4-12 characters long.
+                        </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" placeholder="Leave a comment here" id="first_name"
+                            name="first_name">
+                        <label for="first_name"> Name*</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" placeholder="Leave a comment here" id="email" name="email">
+                        <label for="email"> Email*</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" placeholder="Leave a comment here" type="password" id="password"
+                            name="password">
+                        <label for="password"> Password*</label>
+                        <div id="passwordHelpBlock" class="form-text" style="font-size:12px;text-align:left;">
+                            Your password must be 6-12 characters long, contain one uppercase, one lowercase letter, a number and a special character.
+                        </div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" placeholder="Leave a comment here" type="password"
+                            id="confirm_password" name="confirm_password">
+                        <label for="confirm_password"> Confirm Password* </label>
+                    </div>
+                    <div class="form-check ps-0 mb-3">
+                        <input type="checkbox" class="cbx" id="terms_and_conditions" style="display:none">
+                        <label for="terms_and_conditions" id="terms_label" class="check">
+                            <svg width="25px" height="25px" viewBox="0 0 30 30">
+                                <path d="M1,15 L1,6 C1,3.5 3.5,1 6,1 L24,1 C26.5,1 29,2 29,6 L29,24 C29,27 27,29 24,29 L6,29 C3.5,29 1,27 1,24 L1,15 Z"></path>
+                                <polyline points="1 15 12 24 26 7"></polyline>
+                            </svg>
+                            <span class="task-label mx-3">
+                                By checking this box, I agree to Terms &amp; Conditions of the site.
+                            </span>
+                        </label>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <a class="btn btn-warning" onclick="saveUser()">Submit</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <div id="continue_req" class="card p-4 fade" style="display:none;">
+            <div class="card-body">
+                <h1 class="card-title"> You’re ready to play!</h1>
+                <p class="card-text">In order to play with real money, you will need to provide more information. You
+                    can do so now, if you wish or skip and do it at a later time.</p>
+                <div class="d-grid gap-2 d-flex justify-content-between">
+                    <a class="btn btn-outline-secondary" href="http://www.casino.com/" role="button">Skip</a>
+                    <a class="btn btn-warning" onclick="continueRegistration()" role="button">Continue Registration</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="additional_info" class="card p-4 fade" style="display:none;">
+            <div class="card-body">
+                <header class="card-title"> Additional Information</header>
+                <form>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" placeholder="Leave a comment here" id="address_1" name="address_1">
+                        <label for="address_1"> Address 1*</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" placeholder="Leave a comment here" id="address_2" name="address_2">
+                        <label for="address_2"> Address 2</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" placeholder="Leave a comment here" id="city" name="city">
+                        <label for="city"> City*</label>
+                    </div>
+                    <select class="form-select mb-3 py-3" id="country" aria-label="Default select example">
+                        <option value="" selected>Country*</option>
+                        <% if (countries && countries.length) { %>
+                            <% for(var i=0;i < countries.length;i++){ %>
+                                <option value="<%=i%>">
+                                    <%=countries[i].name%>
+                                </option>
+                        <% }} else{ %>
+                             <option value="1">One</option>
+                             <option value="2">Two</option>
+                             <option value="3">Three</option>
+                        <%} %>
+                    </select>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" placeholder="Leave a comment here" id="postal_code"
+                            name="postal_code">
+                        <label for="postal_code"> Postal Code*</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" placeholder="Leave a comment here" id="phone" name="phone">
+                        <label for="phone"> Phone Number*</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <a href="#" onclick="document.getElementById('bonus_code_div').style.display='block'">I have a
+                            bonus code</a>
+                    </div>
+                    <div class="form-floating mb-3" id="bonus_code_div" style="display:none;">
+                        <input class="form-control" placeholder="Leave a comment here" id="bonus_code"
+                            name="bonus_code">
+                        <label for="bonus_code"> Bonus Code</label>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <a class="btn btn-warning" onclick="saveAdditionalInformation()">Submit</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="thank_you" class="card p-4 fade" style="display:none;">
+            <div class="card-body">
+                <h1 class="card-title"> Thank you!</h1>
+                <p class="card-text pb-4">You can now play with real money. Have fun, and good luck!</p>
+                <div class="d-grid gap-2 d-flex justify-content-between">
+                    <a class="btn btn-outline-secondary" href="http://play.casino.com/promotions"
+                        role="button">Promotions</a>
+                    <a class="btn btn-warning" href="http://play.casino.com/" role="button">Play Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="/assets/js/jquery-3.6.0.min.js"></script>
+    <script src="/assets/js/toastr.min.js"></script>
+    <script src="/assets/js/functions.js"></script>
+</body>

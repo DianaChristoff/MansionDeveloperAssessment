@@ -1,0 +1,140 @@
+/* Custom Checkbox Styles */
+.custom-checkbox-grid {
+    justify-content: space-between;
+      margin: 0 9px;
+      display: flex;
+      flex-wrap: wrap;
+      font-family: 'Permanent Marker', cursive;    
+      font-size: 17px;
+  }
+  
+  .check {
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    /* margin: 0 38px 0 9px; */
+    text-align: left;
+    width:fit-content;
+    /* height: 30px; */
+    font-size: 1.5rem;
+    -webkit-tap-highlight-color: transparent;
+    transform: translate3d(0, 0, 0);
+  }
+  .check:before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(34, 50, 84, 0.03);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  .check svg {
+    position: relative;
+    z-index: 1;
+    fill: none;
+    min-width: 25px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #C8CCD4;
+    stroke-width: 3;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s ease;
+  }
+  .check path {
+    stroke-dasharray: 110;
+    stroke-dashoffset: 0;
+  }
+  .check polyline {
+    stroke-dasharray: 40;
+    stroke-dashoffset: 120;
+  }
+  .check:hover:before {
+    opacity: 1;
+  }
+  .check:hover svg {
+    stroke: #c99086;
+  }
+  
+  .cbx:checked + .check svg {
+    stroke: #c99086;
+  }
+  .cbx:checked + .check path {
+    stroke-dashoffset: 110;
+    transition: all 0.3s linear;
+  }
+  .cbx:checked + .check polyline {
+    stroke-dashoffset: 82;
+    transition: all 0.2s linear;
+    transition-delay: 0.15s;
+  }
+  
+  .event{
+    display: flex;
+      flex-direction: row;
+      margin: auto;
+      justify-content: space-between;
+      padding: 6px 0;
+      border-bottom: 1px solid #9d9696;
+      margin: 2px 7px;
+  }
+  
+  .cursive-txt{
+    font-family: 'Lovers Quarrel', cursive;
+    font-size:64px;
+  }
+  
+  .event-label{
+    font-family: 'Permanent Marker', cursive;
+  }
+/* Custom Checkboxes End */
+
+.cursive-txt {
+	font-family: 'Gilda Display', serif;
+  color:white;
+}
+
+.task-label{
+    /* font-family: 'Permanent Marker', cursive ; */
+    font-size: 14px;
+}
+.toast-success{background-color:#51A351 !important}.toast-error{background-color:#BD362F !important}
+.toast-info{background-color:#2F96B4 !important}
+/* Parallax Styles- End */
+
+body{
+  height: 100vh;
+  display: flex;
+  font-family: sans-serif; 
+  background: rgb(246,235,231); 
+  background: radial-gradient(circle, rgba(246,235,231,1) 0%, rgba(255,163,0,1) 45%, rgba(210,77,27,1) 100%);
+  background: url(https://wallpaperaccess.com/full/1587489.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.background-overlay{
+  background: #ffffff2b; 
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-family: sans-serif;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.navbar{
+  background-color: #f1e5daa3 !important;
+}
+
+.card-title{
+  font-size: 40px !important;
+  margin-bottom: 60px !important;
+  font-family: 'Rowdies', cursive !important;
+}
